@@ -42,7 +42,7 @@ def softmax_test1():
 
 
 def softmax_test2():
-    # CrossEntropyLoss多分类，用这种方便,这里3行代表3个数据对应下面y也有三个值
+    # CrossEntropyLoss多分类，用这种方便,这里4行代表4个数据对应下面y也有四个值
     x1 = torch.tensor([[1, 0.2, 0.1],
                       [0.1, 1, 0.1],
                       [0.1, 0.2, 1],
