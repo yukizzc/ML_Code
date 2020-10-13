@@ -10,3 +10,6 @@ https://github.com/ljpzzz/machinelearning
 
 SVM的内容建议学习浙大胡老师的 
 https://www.bilibili.com/video/BV1dJ411B7gh?from=search&seid=8182783601582102457
+
+最近看的一个手把手推理公式
+https://weakcha.github.io/Personal_Weak_Cha/index.html
