@@ -6,7 +6,8 @@ data = pd.read_csv('./iris.csv', index_col=0)
 feature_columns = data.columns[:-1]
 target_column = data.columns[-1]
 
-
+# https://www.knowledgedict.com/tutorial/ml-xgboost-objective-param-detail.html
+# https://blog.csdn.net/iyuanshuo/article/details/80142730
 #数据转换成Dmatrix格式，xgboost必须
 xgtrain = xgb.DMatrix(data[feature_columns].values, data[target_column].values)
 '''
