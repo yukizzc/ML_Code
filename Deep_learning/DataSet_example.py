@@ -2,7 +2,7 @@ from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 import pandas as pd
 import torch
-
+from sklearn import datasets
 
 class DiabetesDataset(Dataset):
     def __init__(self, x_, y_):
@@ -19,9 +19,9 @@ class DiabetesDataset(Dataset):
         return self.len
 
 
-df = pd.read_csv('./iris.csv')
-x_train = df.iloc[:, 1:-1].values
-y_train = df.iloc[:, -1].values
+df = datasets.load_iris()
+x_train = df['data']
+y_train = df['target']
 dataset = DiabetesDataset(x_train, y_train)
 # shuffle是否打乱，建议开启，这里看效果所以关闭了
 train_loader = DataLoader(dataset=dataset, batch_size=10, shuffle=False)

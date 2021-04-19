@@ -1,9 +1,0 @@
-里面有很多可视化地址https://github.com/ashishpatel26/Tools-to-Design-or-Visualize-Architecture-of-Neural-Network  
-
-上传保存的深度学习模型，然后可以展示https://netron.app/  
-
-可视化http://alexlenail.me/NN-SVG/index.html  
-
-
-# https://www.knowledgedict.com/tutorial/ml-xgboost-objective-param-detail.html
-# https://blog.csdn.net/iyuanshuo/article/details/80142730

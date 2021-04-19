@@ -1,6 +1,4 @@
-# ML_example
 机器学习和深度学习的代码范例，其中深度学习用pytorch的框架
-
 
 ai算法工程师手册 
 http://www.huaxiaozhuan.com/
@@ -8,8 +6,19 @@ http://www.huaxiaozhuan.com/
 刘建平的机器学习汇总 
 https://github.com/ljpzzz/machinelearning
 
-SVM的内容建议学习浙大胡老师的 
-https://www.bilibili.com/video/BV1dJ411B7gh?from=search&seid=8182783601582102457
+神经网络可视化地址合集 
+https://github.com/ashishpatel26/Tools-to-Design-or-Visualize-Architecture-of-Neural-Network  
 
-最近看的一个手把手推理公式
-https://weakcha.github.io/Personal_Weak_Cha/index.html
+上传保存的深度学习模型，然后可以展示流程图 
+https://netron.app/  
+
+在线设定参数展示网络结构图 
+http://alexlenail.me/NN-SVG/index.html  
+
+xgboost参数 
+https://www.knowledgedict.com/tutorial/ml-xgboost-objective-param-detail.html
+https://blog.csdn.net/iyuanshuo/article/details/80142730
+
+神经网络的交叉熵 
+https://www.knowledgedict.com/tutorial/ml-xgboost-objective-param-detail.html
+https://blog.csdn.net/iyuanshuo/article/details/80142730

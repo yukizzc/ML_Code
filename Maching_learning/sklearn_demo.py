@@ -17,8 +17,6 @@ X = data['data']
 Y = data['target']
 
 # 最简单用法
-
-
 def Log_():
     clf = LogisticRegression(max_iter=200)
     clf.fit(X, Y)
@@ -156,12 +154,10 @@ def plot_learning_curve(estimator, title, X, y, axes=None, ylim=None, cv=None,
 
     return plt
 # 画学习曲线
-
-
 def get_curve():
     fig, axes = plt.subplots(3, 2, figsize=(10, 25))
 
-    X, y = X, Y
+    x_, y_ = X, Y
 
 
     title = "Learning Curves (Naive Bayes)"
@@ -170,14 +166,14 @@ def get_curve():
     cv = ShuffleSplit(n_splits=100, test_size=0.2, random_state=0)
 
     estimator = GaussianNB()
-    plot_learning_curve(estimator, title, X, y, axes=axes[:, 0], ylim=(0.7, 1.01),
+    plot_learning_curve(estimator, title, x_, y_, axes=axes[:, 0], ylim=(0.7, 1.01),
                         cv=cv, n_jobs=4)
 
     title = r"Learning Curves (SVM, RBF kernel, $\gamma=0.2$)"
     # SVC is more expensive so we do a lower number of CV iterations:
     cv = ShuffleSplit(n_splits=10, test_size=0.2, random_state=0)
     estimator = svm.SVC(gamma=0.2, kernel='rbf')
-    plot_learning_curve(estimator, title, X, y, axes=axes[:, 1], ylim=(0.7, 1.01),
+    plot_learning_curve(estimator, title, x_, y_, axes=axes[:, 1], ylim=(0.7, 1.01),
                         cv=cv, n_jobs=4)
 
     plt.show()
@@ -188,3 +184,13 @@ def cross():
     scores = cross_val_score(clf, X, Y, cv=5, scoring='accuracy')
     print(scores)
 
+
+if __name__ =="__main__":
+    print('------------------------------------------------------------------------------------------------------------')
+    Log_()
+    print('------------------------------------------------------------------------------------------------------------')
+    svm_()
+    print('------------------------------------------------------------------------------------------------------------')
+    get_curve()
+    print('------------------------------------------------------------------------------------------------------------')
+    cross()
