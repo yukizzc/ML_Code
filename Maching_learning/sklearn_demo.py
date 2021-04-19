@@ -10,35 +10,36 @@ from sklearn.model_selection import ShuffleSplit
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import cross_val_score
+from sklearn import datasets
 
-
-data = pd.read_csv('./iris.csv', index_col=0)
-feature_columns = data.columns[:-1]
-target_column = data.columns[-1]
+data = datasets.load_iris()
+X = data['data']
+Y = data['target']
 
 # 最简单用法
 
 
 def Log_():
     clf = LogisticRegression(max_iter=200)
-    clf.fit(data[feature_columns].values, data[target_column].values)
-    preds = clf.predict(data[feature_columns].values)
-    print('准曲率为',metrics.accuracy_score(preds, data[target_column].values))
+    clf.fit(X, Y)
+    preds = clf.predict(X)
+    print('准曲率为',metrics.accuracy_score(preds, Y))
+
 
 # 网格搜索,暴力循环参数，其中cv已经是用了交叉验证
 def svm_():
     parameters = {'kernel':['linear', 'rbf'], 'C': range(1,10,1), 'gamma':np.arange(0.1,1.0,0.1)}
     svc = svm.SVC()
     clf = GridSearchCV(svc, parameters, cv=5,scoring='accuracy')
-    clf.fit(data[feature_columns].values, data[target_column].values)
-    preds = clf.predict(data[feature_columns].values)
+    clf.fit(X, Y)
+    preds = clf.predict(X)
     print(clf.best_params_)
     print('模型及其参数', clf.best_estimator_)
-    print('准曲率为', metrics.accuracy_score(preds, data[target_column].values))
+    print('准曲率为', metrics.accuracy_score(preds, Y))
     print('混淆矩阵')
-    print(metrics.confusion_matrix(data[target_column].values, preds,labels=[1,2,0]))
+    print(metrics.confusion_matrix(Y, preds,labels=[1,2,0]))
     print('混合打分')
-    print(metrics.classification_report(data[target_column].values, preds))
+    print(metrics.classification_report(Y, preds))
 
 
 def plot_learning_curve(estimator, title, X, y, axes=None, ylim=None, cv=None,
@@ -160,7 +161,7 @@ def plot_learning_curve(estimator, title, X, y, axes=None, ylim=None, cv=None,
 def get_curve():
     fig, axes = plt.subplots(3, 2, figsize=(10, 25))
 
-    X, y = data[feature_columns].values, data[target_column].values
+    X, y = X, Y
 
 
     title = "Learning Curves (Naive Bayes)"
@@ -184,6 +185,6 @@ def get_curve():
 #交叉验证
 def cross():
     clf = KNeighborsClassifier()
-    scores = cross_val_score(clf, data[feature_columns].values, data[target_column].values, cv=5, scoring='accuracy')
+    scores = cross_val_score(clf, X, Y, cv=5, scoring='accuracy')
     print(scores)
 
