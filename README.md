@@ -15,6 +15,9 @@ https://netron.app/
 在线设定参数展示网络结构图 
 http://alexlenail.me/NN-SVG/index.html  
 
+卷积动态图
+https://cbovar.github.io/ConvNetDraw/
+
 xgboost参数 
 https://www.knowledgedict.com/tutorial/ml-xgboost-objective-param-detail.html
 https://blog.csdn.net/iyuanshuo/article/details/80142730
