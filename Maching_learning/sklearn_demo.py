@@ -23,6 +23,13 @@ def Log_():
     preds = clf.predict(X)
     print('准曲率为',metrics.accuracy_score(preds, Y))
 
+# 保存和读取模型
+import pickle
+with open('mymodel.pickle','wb') as f:
+        pickle.dump(clf,f)
+with open('mymodel.pickle', 'rb') as f:
+    clf2 = pickle.load(f)
+clf2.score(X,Y)
 
 # 网格搜索,暴力循环参数，其中cv已经是用了交叉验证
 def svm_():
